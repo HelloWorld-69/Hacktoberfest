@@ -22,9 +22,9 @@ git clone https://github.com/your-username/Hacktoberfest2020.git
 ```
 * change the present working directory
 ```markdown
-cd Hacktoberfest2020
+cd Hacktoberfest
 ```
-* Pick a project or make a new one
+* Upload the best program you have ever created
 * Make a new branch
 ```markdown
 git checkout -b branch-name
