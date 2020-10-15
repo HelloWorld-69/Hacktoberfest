@@ -22,6 +22,8 @@ void reverse2(string s)
 		char temp=s[i];
 		s[i]=s[j];
 		s[j]=temp;
+		i++;
+		j--;
 	}
 	cout<<s;
 }
