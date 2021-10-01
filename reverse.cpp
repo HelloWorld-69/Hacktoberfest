@@ -30,7 +30,8 @@ void reverse2(string s)
 
 int main()
 {
-	string s="Mohan";
+	cout<<"enter string"<<endl;
+	cin>>s;
 	reverse1(s);
 	cout<<"\n\n";
 	reverse2(s);
