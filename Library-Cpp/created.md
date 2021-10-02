@@ -3,3 +3,5 @@
 - Such as Linked List (All types), BST, BT, Graph 
 - and their different functionalities.
 - a token for Hacktober fest
+  Just add header only on your CPP file and use it!
+  
