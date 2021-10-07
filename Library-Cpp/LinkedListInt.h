@@ -60,4 +60,85 @@ int pop(Node* &head){
     return getNum;
 }
 
+// Reverse Function For Linked list
+Node* reverse(Node* &head){
+    if(head == NULL) return NULL;
+        Node* newHead = head;
+        Node* dummy = NULL;
+        Node* newNext = head->next;
+    
+        
+        while(newNext !=NULL){
+           newHead->next = dummy;
+           dummy = newHead;
+            newHead = newNext;
+            newNext = newNext->next;
+            
+            
+        }
+        newHead->next = dummy;
+        head = newHead;
+        return head;
+}
 
+// Sorting Function for Linked List
+// in ASCENDING ORDER
+Node *merge(Node *head1 , Node *head2)
+{
+
+    if(head1 == NULL)
+    {
+        return head2;
+    }
+    if(head2 == NULL)
+    {
+        return head1;
+    }
+    
+    if(head1->val < head2->val)
+    {
+        head1->next = merge(head1->next,head2);
+        return head1;
+    }
+    
+    head2->next = merge(head2->next,head1);
+    return head2;
+}
+
+Node* sort(Node* head) {
+    
+    if(head == NULL || head->next == NULL)
+    {
+        return head;
+    }
+    
+    Node *slow = head;
+    Node *fast = head->next;
+    
+    while(fast!=NULL && fast->next!= NULL)
+    {
+        slow=slow->next;
+        fast = fast->next->next;
+    }
+    
+    Node *newnode = slow->next;
+    slow->next = NULL;
+    
+    return merge(sort(head),sort(newnode));
+}
+
+
+
+// Binary Search Function to 
+// Search for a key in Linked List
+Node* search(Node* head, int key){
+    Node* ptr = head;
+    while(ptr){
+        if(ptr->val == key){
+            return ptr;
+        }
+        ptr = ptr->next;
+    }
+    std::cout<<"---- Key Not Found ----\n";
+    return NULL;
+}
